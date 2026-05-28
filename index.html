@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYUMI NISHIMURA | 人・組織の流れを整え、動かす人</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Nunito:ital,wght@0,300;0,400;0,600;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:  #3d3582;
+      --lav:   #b8aee0;
+      --lav-m: #9b92d4;
+      --lav-l: #e8e4f8;
+      --lav-p: #f5f3fc;
+      --pch:   #f5a882;
+      --pch-l: #fde8de;
+      --pch-p: #fff6f2;
+      --gold:  #e8b96d;
+      --gld-l: #fdefd8;
+      --bg:    #fdf8ff;
+      --white: #ffffff;
+      --tm:    #6e6aa0;
+      --ts:    #aaa8cc;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'M PLUS Rounded 1c',sans-serif;
+      background:var(--bg);color:var(--navy);line-height:1.85;
+    }
+
+    /* ── HERO ── */
+    .hero{
+      background:linear-gradient(160deg,#ece7ff 0%,#fdf0e8 55%,#fff9f0 100%);
+      min-height:100vh;display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:80px 24px 100px;position:relative;overflow:hidden;
+    }
+    .deco{position:absolute;pointer-events:none;}
+    .deco-tl{top:-10px;left:-10px;width:260px;opacity:.42;}
+    .deco-br{bottom:-10px;right:-10px;width:240px;opacity:.38;transform:rotate(180deg);}
+    .deco-tr{top:28px;right:56px;width:100px;opacity:.28;}
+
+    .hero-inner{position:relative;z-index:1;max-width:680px;}
+
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:7px;
+      background:rgba(255,255,255,.72);border:1.5px solid var(--lav-l);
+      border-radius:40px;padding:7px 20px;margin-bottom:32px;
+      font-family:'Nunito',sans-serif;font-size:.82rem;letter-spacing:.18em;
+      color:var(--lav-m);backdrop-filter:blur(6px);
+    }
+    .hero-floral{margin:0 auto 24px;width:64px;height:64px;}
+    .hero-en{
+      font-family:'Nunito',sans-serif;font-weight:300;
+      font-size:clamp(2rem,6vw,4.2rem);letter-spacing:.22em;
+      color:var(--navy);margin-bottom:5px;
+    }
+    .hero-ja{
+      font-family:'M PLUS Rounded 1c',sans-serif;font-weight:300;
+      font-size:clamp(.9rem,1.9vw,1.2rem);letter-spacing:.5em;
+      color:var(--lav-m);margin-bottom:40px;
+    }
+    .hero-sep{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:30px;}
+    .hero-sep-line{width:40px;height:1px;background:var(--pch);}
+    .hero-tagline{
+      font-size:clamp(1.15rem,3.2vw,2rem);font-weight:500;
+      color:var(--navy);line-height:1.7;margin-bottom:22px;
+    }
+    .hero-sub{
+      font-family:'Nunito',sans-serif;font-style:italic;
+      font-size:clamp(.86rem,1.7vw,1rem);letter-spacing:.14em;color:var(--lav-m);
+    }
+    .scroll-hint{
+      position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+      display:flex;flex-direction:column;align-items:center;gap:5px;
+      font-family:'Nunito',sans-serif;color:var(--pch);opacity:.5;
+      font-size:.62rem;letter-spacing:.25em;
+    }
+    .scroll-hint::after{content:'';width:1px;height:28px;background:var(--pch);}
+
+    /* ── COMMON ── */
+    .sec{padding:80px 24px;}
+    .w{max-width:900px;margin:0 auto;}
+    .ws{max-width:680px;margin:0 auto;}
+    .sl{font-family:'Nunito',sans-serif;font-size:.76rem;letter-spacing:.35em;text-transform:uppercase;color:var(--pch);margin-bottom:6px;}
+    .st{font-size:clamp(1.35rem,3.5vw,2.1rem);font-weight:700;line-height:1.45;margin-bottom:10px;}
+    .sbar{display:flex;align-items:center;gap:7px;margin-bottom:44px;}
+    .sd{width:7px;height:7px;border-radius:50%;background:var(--pch);}
+    .sl2{width:26px;height:2px;background:var(--lav);}
+    .sd2{width:5px;height:5px;border-radius:50%;background:var(--lav);}
+    .wave{overflow:hidden;line-height:0;}
+    .wave svg{display:block;width:100%;}
+
+    /* ── ABOUT ── */
+    .about{background:var(--white);}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
+    .about-vision{
+      font-size:clamp(1.05rem,2.3vw,1.45rem);font-weight:400;
+      color:var(--navy);line-height:2;
+    }
+    .about-mission{
+      background:var(--lav-p);border-radius:16px;
+      border:1.5px solid var(--lav-l);padding:28px;
+      position:relative;overflow:hidden;
+    }
+    .about-mission::after{
+      content:'';position:absolute;top:-24px;right:-24px;
+      width:72px;height:72px;border-radius:50%;background:var(--lav-l);
+    }
+    .m-lbl{font-family:'Nunito',sans-serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--lav-m);margin-bottom:10px;}
+    .m-text{font-size:clamp(.92rem,2vw,1.1rem);font-weight:400;color:var(--navy);line-height:1.9;position:relative;z-index:1;}
+    .evo-row{
+      margin-top:24px;display:grid;grid-template-columns:1fr 40px 1fr;
+      align-items:center;gap:0;
+    }
+    .evo-box{padding:18px 20px;border-radius:12px;}
+    .evo-b{background:rgba(232,228,248,.3);border:1.2px solid var(--lav-l);}
+    .evo-a{background:linear-gradient(135deg,#fff8f5,#fdf4ed);border:1.2px solid var(--pch-l);}
+    .evo-lbl{font-family:'Nunito',sans-serif;font-size:.68rem;letter-spacing:.25em;margin-bottom:10px;}
+    .evo-b .evo-lbl{color:var(--lav-m);}
+    .evo-a .evo-lbl{color:var(--pch);}
+    .evo-list{list-style:none;}
+    .evo-list li{font-size:.86rem;line-height:1.75;padding-left:14px;position:relative;}
+    .evo-list li::before{content:'';position:absolute;left:0;top:.68em;width:5px;height:5px;border-radius:50%;}
+    .evo-b .evo-list li{color:var(--tm);}
+    .evo-b .evo-list li::before{background:var(--lav);}
+    .evo-a .evo-list li{color:var(--navy);font-weight:500;}
+    .evo-a .evo-list li::before{background:var(--pch);}
+    .evo-arr{display:flex;align-items:center;justify-content:center;}
+    .arr-c{width:34px;height:34px;border-radius:50%;background:var(--pch);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(245,168,130,.4);}
+
+    /* ── STRENGTHS ── */
+    .strengths{background:var(--lav-p);}
+    .str-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:0;}
+    .str-card{background:var(--white);padding:24px 22px;border-radius:16px;border:1.5px solid var(--lav-l);box-shadow:0 2px 12px rgba(100,80,200,.05);transition:transform .22s,box-shadow .22s;}
+    .str-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(100,80,200,.12);}
+    .str-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+    .str-icon{width:38px;height:38px;flex-shrink:0;}
+    .str-ttl{font-size:.97rem;font-weight:700;color:var(--navy);}
+    .str-desc{font-size:.82rem;color:var(--tm);line-height:1.8;}
+    .tag-row{margin-top:10px;display:flex;flex-wrap:wrap;gap:4px;}
+    .tag{font-size:.68rem;color:var(--lav-m);background:var(--lav-l);border-radius:20px;padding:2px 10px;}
+
+    /* ── STEPS & VALUES combined ── */
+    .sv{background:var(--white);}
+    .sv-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+    .step-list{display:flex;flex-direction:column;gap:12px;margin-top:0;}
+    .step-row{display:flex;align-items:flex-start;gap:14px;}
+    .step-cir{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--lav),var(--pch));display:flex;align-items:center;justify-content:center;color:var(--white);font-family:'Nunito',sans-serif;font-size:.9rem;font-weight:600;flex-shrink:0;margin-top:2px;}
+    .step-ttl{font-size:.92rem;font-weight:700;color:var(--navy);margin-bottom:3px;}
+    .step-body{font-size:.78rem;color:var(--tm);line-height:1.7;}
+    .val-grid{display:flex;flex-wrap:wrap;gap:9px;margin-top:0;}
+    .val-item{flex:1;min-width:90px;padding:14px 10px;border-radius:12px;text-align:center;}
+    .val-item:nth-child(7n+1){background:#eee9fb;}
+    .val-item:nth-child(7n+2){background:#fde8de;}
+    .val-item:nth-child(7n+3){background:#fdefd8;}
+    .val-item:nth-child(7n+4){background:#e8e4f8;}
+    .val-item:nth-child(7n+5){background:#fde8de;}
+    .val-item:nth-child(7n+6){background:#fdefd8;}
+    .val-item:nth-child(7n+7){background:#eee9fb;}
+    .val-icon{font-size:1.2rem;margin-bottom:4px;}
+    .val-name{font-size:.82rem;font-weight:700;color:var(--navy);}
+    .val-sub{font-size:.66rem;color:var(--tm);line-height:1.4;margin-top:2px;}
+
+    /* ── CLOSING ── */
+    .closing{background:linear-gradient(150deg,var(--lav-p) 0%,var(--pch-p) 100%);text-align:center;}
+    .words-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:48px;}
+    .words-list li{background:var(--white);font-size:clamp(.88rem,1.9vw,1.07rem);font-weight:500;color:var(--navy);padding:16px 24px;border-radius:40px;border:1.5px solid var(--lav-l);transition:all .22s;cursor:default;display:flex;align-items:center;gap:10px;text-align:left;}
+    .words-list li::before{content:'✦';color:var(--pch);font-size:.8rem;flex-shrink:0;}
+    .words-list li:hover{background:var(--lav-p);border-color:var(--lav);transform:translateX(4px);}
+    .future-card{background:var(--white);border-radius:20px;padding:40px 32px;border:1.5px solid var(--lav-l);box-shadow:0 4px 20px rgba(100,80,200,.07);}
+    .future-deco{margin:0 auto 18px;width:48px;}
+    .future-closing{font-size:clamp(1.1rem,2.8vw,1.65rem);font-weight:500;color:var(--navy);line-height:1.9;}
+
+    /* ── FOOTER ── */
+    footer{background:var(--navy);padding:44px 24px;text-align:center;}
+    .ft-name{font-family:'Nunito',sans-serif;font-weight:300;font-size:1.55rem;letter-spacing:.2em;color:var(--lav-l);margin-bottom:7px;}
+    .ft-sub{font-size:.74rem;color:rgba(255,255,255,.35);letter-spacing:.1em;}
+    .ft-heart{margin-top:18px;color:var(--pch);opacity:.55;}
+
+    @media(max-width:680px){
+      .about-grid{grid-template-columns:1fr;}
+      .evo-row{grid-template-columns:1fr;gap:8px;}
+      .evo-arr{transform:rotate(90deg);margin:2px 0;}
+      .sv-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="deco deco-tl">
+    <svg viewBox="0 0 240 240" fill="none"><path d="M15 220 C50 160 90 110 130 70 C160 40 195 20 225 8" stroke="#b8aee0" stroke-width="1.8" stroke-linecap="round"/><path d="M50 185 Q85 155 72 128 Q48 150 50 185Z" fill="#ddd7f7" opacity=".6"/><path d="M90 145 Q125 115 112 88 Q88 110 90 145Z" fill="#f5c4aa" opacity=".55"/><path d="M128 108 Q163 78 150 51 Q126 73 128 108Z" fill="#ddd7f7" opacity=".5"/><circle cx="228" cy="8" r="5" fill="#f5c4aa" opacity=".75"/><circle cx="218" cy="2" r="3" fill="#e8c87a" opacity=".65"/><circle cx="235" cy="16" r="3" fill="#b8aee0" opacity=".65"/><circle cx="200" cy="30" r="2" fill="#e8c87a" opacity=".45"/><circle cx="155" cy="55" r="1.8" fill="#b8aee0" opacity=".4"/><circle cx="115" cy="90" r="1.5" fill="#f5c4aa" opacity=".4"/><circle cx="75" cy="128" r="1.8" fill="#e8c87a" opacity=".4"/><circle cx="42" cy="200" r="2.5" fill="#e8c87a" opacity=".55"/></svg>
+  </div>
+  <div class="deco deco-br">
+    <svg viewBox="0 0 240 240" fill="none"><path d="M15 220 C50 160 90 110 130 70 C160 40 195 20 225 8" stroke="#f5a882" stroke-width="1.8" stroke-linecap="round"/><path d="M50 185 Q85 155 72 128 Q48 150 50 185Z" fill="#fde8de" opacity=".65"/><path d="M90 145 Q125 115 112 88 Q88 110 90 145Z" fill="#ddd7f7" opacity=".5"/><path d="M128 108 Q163 78 150 51 Q126 73 128 108Z" fill="#fde8de" opacity=".55"/><circle cx="228" cy="8" r="5" fill="#b8aee0" opacity=".65"/><circle cx="218" cy="2" r="3" fill="#f5c4aa" opacity=".65"/><circle cx="200" cy="30" r="2" fill="#e8c87a" opacity=".45"/></svg>
+  </div>
+  <div class="deco deco-tr">
+    <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="40" stroke="#b8aee0" stroke-width="1" stroke-dasharray="3 5" opacity=".45"/><circle cx="60" cy="60" r="28" stroke="#f5a882" stroke-width=".8" stroke-dasharray="2 4" opacity=".38"/><circle cx="60" cy="20" r="5" fill="#f5c4aa" opacity=".55"/><circle cx="100" cy="60" r="4" fill="#b8aee0" opacity=".48"/><circle cx="60" cy="100" r="5" fill="#e8c87a" opacity=".52"/><circle cx="20" cy="60" r="4" fill="#f5c4aa" opacity=".45"/></svg>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <svg width="13" height="13" viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" fill="none" stroke="#9b92d4" stroke-width="1.2"/><circle cx="7" cy="7" r="2" fill="#9b92d4"/></svg>
+      Profile &amp; Vision
+    </div>
+    <div class="hero-floral">
+      <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="18" fill="#b8aee0" opacity=".12"/><circle cx="32" cy="32" r="26" stroke="#b8aee0" stroke-width=".9" stroke-dasharray="3 4" opacity=".45"/><ellipse cx="32" cy="10" rx="4.5" ry="8" fill="#f5c4aa" opacity=".65" transform="rotate(0 32 32)"/><ellipse cx="32" cy="10" rx="4.5" ry="8" fill="#ddd7f7" opacity=".55" transform="rotate(45 32 32)"/><ellipse cx="32" cy="10" rx="4.5" ry="8" fill="#f5c4aa" opacity=".48" transform="rotate(90 32 32)"/><ellipse cx="32" cy="10" rx="4.5" ry="8" fill="#ddd7f7" opacity=".55" transform="rotate(135 32 32)"/><ellipse cx="32" cy="10" rx="4.5" ry="8" fill="#f5c4aa" opacity=".65" transform="rotate(180 32 32)"/><ellipse cx="32" cy="10" rx="4.5" ry="8" fill="#ddd7f7" opacity=".55" transform="rotate(225 32 32)"/><ellipse cx="32" cy="10" rx="4.5" ry="8" fill="#f5c4aa" opacity=".48" transform="rotate(270 32 32)"/><ellipse cx="32" cy="10" rx="4.5" ry="8" fill="#ddd7f7" opacity=".55" transform="rotate(315 32 32)"/><circle cx="32" cy="32" r="7" fill="white" opacity=".9"/><circle cx="32" cy="32" r="4" fill="#e8c87a" opacity=".75"/></svg>
+    </div>
+    <div class="hero-en">AYUMI NISHIMURA</div>
+    <div class="hero-ja">西 村 あ ゆ み</div>
+    <div class="hero-sep">
+      <div class="hero-sep-line"></div>
+      <svg width="16" height="16" viewBox="0 0 18 18"><path d="M9 2 L10.5 7 L16 7 L11.5 10.5 L13 16 L9 12.5 L5 16 L6.5 10.5 L2 7 L7.5 7 Z" fill="#f5a882" opacity=".8"/></svg>
+      <div class="hero-sep-line"></div>
+    </div>
+    <div class="hero-tagline">人・組織・事業の流れを整え、動かす人</div>
+    <div class="hero-sub">Organizing people, organizations, and the flow of business.</div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<div class="wave" style="background:linear-gradient(160deg,#ece7ff,#fdf0e8);">
+  <svg viewBox="0 0 1440 52" preserveAspectRatio="none"><path fill="#ffffff" d="M0,28 C360,52 720,0 1080,32 C1260,46 1380,18 1440,28 L1440,52 L0,52Z"/></svg>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<section class="sec about">
+  <div class="w">
+    <div class="sl">About</div>
+    <h2 class="st">ビジョンと使命</h2>
+    <div class="sbar"><div class="sd"></div><div class="sl2"></div><div class="sd2"></div></div>
+    <div class="about-grid">
+      <div>
+        <p class="about-vision">人と組織が自然に回る状態を作り、<br>一人ひとりの可能性が<br>開花する未来をつくる。</p>
+        <div class="evo-row" style="margin-top:20px;">
+          <div class="evo-box evo-b">
+            <div class="evo-lbl">今までの私</div>
+            <ul class="evo-list"><li>支える・背負う・何でも屋</li><li>裏方・便利な人</li></ul>
+          </div>
+          <div class="evo-arr"><div class="arr-c"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9 H14 M10 5 L14 9 L10 13" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+          <div class="evo-box evo-a">
+            <div class="evo-lbl">これからの私</div>
+            <ul class="evo-list"><li>設計する・導く・育てる</li><li>循環を生む人</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="about-mission">
+        <div class="m-lbl">Mission</div>
+        <p class="m-text">人を無理やり変えるのではなく、<br>人が自然に変わっていける<br>環境をつくること。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:#ffffff;">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none"><path fill="#f5f3fc" d="M0,18 C480,48 960,0 1440,24 L1440,48 L0,48Z"/></svg>
+</div>
+
+<!-- ══ STRENGTHS ══ -->
+<section class="sec strengths">
+  <div class="w">
+    <div class="sl">Strengths</div>
+    <h2 class="st">私の強み TOP5</h2>
+    <div class="sbar"><div class="sd"></div><div class="sl2"></div><div class="sd2"></div></div>
+    <div class="str-grid">
+
+      <div class="str-card">
+        <div class="str-head">
+          <div class="str-icon"><svg viewBox="0 0 38 38" fill="none"><circle cx="19" cy="7" r="5" stroke="#9b92d4" stroke-width="1.6"/><circle cx="7"  cy="29" r="5" stroke="#f5a882" stroke-width="1.6"/><circle cx="31" cy="29" r="5" stroke="#e8c87a" stroke-width="1.6"/><path d="M15 10 L10 24" stroke="#9b92d4" stroke-width="1.3" stroke-linecap="round"/><path d="M23 10 L28 24" stroke="#f5a882" stroke-width="1.3" stroke-linecap="round"/><path d="M12 30 L26 30" stroke="#e8c87a" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+          <div class="str-ttl">構造化能力が高い</div>
+        </div>
+        <p class="str-desc">混乱を整理し、詰まりを見つけて流れを良くする。人が動ける状態をつくることが得意。</p>
+        <div class="tag-row"><span class="tag">#整理力</span><span class="tag">#設計力</span><span class="tag">#全体最適</span></div>
+      </div>
+
+      <div class="str-card">
+        <div class="str-head">
+          <div class="str-icon"><svg viewBox="0 0 38 38" fill="none"><path d="M7 12 Q7 6 19 6 Q31 6 31 12 Q31 22 22 24 L22 29 Q22 31 19 31 Q16 31 16 29 L16 24 Q7 22 7 12Z" stroke="#f5a882" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 14 Q16.5 17 19 17 Q21.5 17 24 14" stroke="#9b92d4" stroke-width="1.3" stroke-linecap="round" fill="none"/><circle cx="19" cy="34" r="2.5" fill="#f5a882" opacity=".6"/></svg></div>
+          <div class="str-ttl">本音を引き出す力</div>
+        </div>
+        <p class="str-desc">安心感のある場で、相手の内側にある想いを引き出し、前に進むサポートができる。</p>
+        <div class="tag-row"><span class="tag">#傾聴</span><span class="tag">#言語化支援</span><span class="tag">#感情理解</span></div>
+      </div>
+
+      <div class="str-card">
+        <div class="str-head">
+          <div class="str-icon"><svg viewBox="0 0 38 38" fill="none"><line x1="19" y1="4" x2="19" y2="34" stroke="#e8e4f8" stroke-width="1.6"/><path d="M19 22 L7 28 L7 14 Z" fill="#ddd7f7" stroke="#9b92d4" stroke-width="1.3" stroke-linejoin="round"/><path d="M19 22 L31 14 L31 28 Z" fill="#fde8de" stroke="#f5a882" stroke-width="1.3" stroke-linejoin="round"/><circle cx="19" cy="5" r="3" fill="#e8c87a" opacity=".8"/><circle cx="19" cy="33" r="3" fill="#b8aee0" opacity=".8"/></svg></div>
+          <div class="str-ttl">実務と感情の両立</div>
+        </div>
+        <p class="str-desc">経理・契約などの現実面と、マインド・人の変化への関心を両方持つ希少なタイプ。</p>
+        <div class="tag-row"><span class="tag">#現実性</span><span class="tag">#感情理解</span><span class="tag">#バランス</span></div>
+      </div>
+
+      <div class="str-card">
+        <div class="str-head">
+          <div class="str-icon"><svg viewBox="0 0 38 38" fill="none"><rect x="6" y="16" width="26" height="18" rx="3" stroke="#9b92d4" stroke-width="1.6"/><path d="M12 16 V12 Q12 6 19 6 Q26 6 26 12 V16" stroke="#f5a882" stroke-width="1.6" stroke-linecap="round" fill="none"/><circle cx="13" cy="24" r="2.5" fill="#ddd7f7" stroke="#9b92d4" stroke-width=".8"/><circle cx="19" cy="24" r="2.5" fill="#fde8de" stroke="#f5a882" stroke-width=".8"/><circle cx="25" cy="24" r="2.5" fill="#fdefd8" stroke="#e8c87a" stroke-width=".8"/></svg></div>
+          <div class="str-ttl">環境設計への感度</div>
+        </div>
+        <p class="str-desc">「環境が人を変える」という視点を持ち、人が自然と成長できる仕組みをつくることが得意。</p>
+        <div class="tag-row"><span class="tag">#場づくり</span><span class="tag">#コミュニティ</span><span class="tag">#影響力</span></div>
+      </div>
+
+      <div class="str-card">
+        <div class="str-head">
+          <div class="str-icon"><svg viewBox="0 0 38 38" fill="none"><circle cx="16" cy="16" r="9" stroke="#9b92d4" stroke-width="1.6"/><path d="M23 23 L33 33" stroke="#f5a882" stroke-width="1.9" stroke-linecap="round"/><path d="M12 16 Q14 12 20 15" stroke="#e8c87a" stroke-width="1.3" stroke-linecap="round" fill="none"/><circle cx="16" cy="16" r="3" fill="#ddd7f7"/></svg></div>
+          <div class="str-ttl">本質を見る力</div>
+        </div>
+        <p class="str-desc">表面的な問題ではなく、「なぜ？」を深く掘り下げ、根本から変える視点を持つ。</p>
+        <div class="tag-row"><span class="tag">#違和感感知</span><span class="tag">#抽象化</span><span class="tag">#本質思考</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:#f5f3fc;">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none"><path fill="#ffffff" d="M0,32 C360,4 900,48 1440,18 L1440,48 L0,48Z"/></svg>
+</div>
+
+<!-- ══ STEPS & VALUES ══ -->
+<section class="sec sv">
+  <div class="w">
+    <div class="sv-grid">
+      <!-- Steps -->
+      <div>
+        <div class="sl">Roadmap</div>
+        <h2 class="st">成長ステップ</h2>
+        <div class="sbar"><div class="sd"></div><div class="sl2"></div><div class="sd2"></div></div>
+        <div class="step-list">
+          <div class="step-row"><div class="step-cir">1</div><div><div class="step-ttl">自分の役割を明確にする</div><p class="step-body">サポートから「設計者・育成者」へ。私にしかできないことを言語化する。</p></div></div>
+          <div class="step-row"><div class="step-cir">2</div><div><div class="step-ttl">集中できることに絞る</div><p class="step-body">単純作業や「何でも対応」を手放し、本質的な仕事に集中する。</p></div></div>
+          <div class="step-row"><div class="step-cir">3</div><div><div class="step-ttl">「場」を持つ</div><p class="step-body">1対1を超え、環境そのものをつくり、コミュニティで真価を発揮する。</p></div></div>
+          <div class="step-row"><div class="step-cir">4</div><div><div class="step-ttl">「在り方」を発信する</div><p class="step-body">ノウハウでなく、自分の経験・価値観・在り方を言葉にして届ける。</p></div></div>
+          <div class="step-row"><div class="step-cir">5</div><div><div class="step-ttl">「一人で頑張らない」を覚える</div><p class="step-body">頼る・任せる・委ねることで、循環する仕組みをつくる。</p></div></div>
+        </div>
+      </div>
+      <!-- Values -->
+      <div>
+        <div class="sl">Values</div>
+        <h2 class="st">大切にしていること</h2>
+        <div class="sbar"><div class="sd"></div><div class="sl2"></div><div class="sd2"></div></div>
+        <div class="val-grid">
+          <div class="val-item"><div class="val-icon">🕊️</div><div class="val-name">自由</div><div class="val-sub">場所・時間に縛られない</div></div>
+          <div class="val-item"><div class="val-icon">🌱</div><div class="val-name">成長</div><div class="val-sub">可能性を試し続ける</div></div>
+          <div class="val-item"><div class="val-icon">💎</div><div class="val-name">本質</div><div class="val-sub">表面では満たされない</div></div>
+          <div class="val-item"><div class="val-icon">🦋</div><div class="val-name">人の変化</div><div class="val-sub">変わる瞬間に惹かれる</div></div>
+          <div class="val-item"><div class="val-icon">✨</div><div class="val-name">意味</div><div class="val-sub">"何のために"を重視</div></div>
+          <div class="val-item"><div class="val-icon">🌸</div><div class="val-name">調和</div><div class="val-sub">空気感を大切に</div></div>
+          <div class="val-item"><div class="val-icon">🌿</div><div class="val-name">自立</div><div class="val-sub">精神・経済の両立</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:#ffffff;">
+  <svg viewBox="0 0 1440 48" preserveAspectRatio="none"><path fill="#f7f5fd" d="M0,16 C360,48 720,8 1080,36 C1260,48 1380,16 1440,24 L1440,48 L0,48Z"/></svg>
+</div>
+
+<!-- ══ CLOSING ══ -->
+<section class="sec closing">
+  <div class="ws">
+    <div class="sl" style="text-align:center;">Words &amp; Future</div>
+    <h2 class="st" style="text-align:center;">私を表すことば</h2>
+    <div class="sbar" style="justify-content:center;"><div class="sd"></div><div class="sl2"></div><div class="sd2"></div></div>
+    <ul class="words-list">
+      <li>人と組織の"詰まり"を流れに変える人</li>
+      <li>整えることで、人の可能性を解放する</li>
+      <li>感情・仕組み・未来を繋ぐ設計者</li>
+      <li>人が変わる"環境"をつくる人</li>
+      <li>背負う人から、循環を生む人へ</li>
+    </ul>
+    <div class="future-card">
+      <div class="future-deco">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="14" fill="#b8aee0" opacity=".14"/><circle cx="24" cy="24" r="20" stroke="#b8aee0" stroke-width=".8" stroke-dasharray="2 4" opacity=".45"/><circle cx="24" cy="4"  r="3" fill="#f5c4aa" opacity=".7"/><circle cx="44" cy="24" r="2.5" fill="#b8aee0" opacity=".6"/><circle cx="24" cy="44" r="3" fill="#e8c87a" opacity=".65"/><circle cx="4"  cy="24" r="2.5" fill="#f5c4aa" opacity=".55"/></svg>
+      </div>
+      <div class="future-closing">
+        人の可能性が開く瞬間に、<br>私の人生の価値がある。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft-name">AYUMI NISHIMURA</div>
+  <div class="ft-sub">人・組織・事業の流れを整え、動かす人</div>
+  <div class="ft-heart"><svg width="18" height="16" viewBox="0 0 20 18"><path d="M10 16 C10 16 2 10 2 5.5 A4.5 4.5 0 0 1 10 3.7 A4.5 4.5 0 0 1 18 5.5 C18 10 10 16 10 16Z" fill="#f5a882" opacity=".65"/></svg></div>
+</footer>
+
+</body>
+</html>
